@@ -8,8 +8,10 @@ import java.security.SecureRandom;
 public class RandomMoveGenerator {
 
   private final SecureRandom random;
+  private final Config config;
 
-  public RandomMoveGenerator() {
+  public RandomMoveGenerator(Config config) {
+    this.config = config;
     random = new SecureRandom();
   }
 

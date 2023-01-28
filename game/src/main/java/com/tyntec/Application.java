@@ -30,7 +30,7 @@ public class Application {
     Player playerOne =
         playerFactory.createPlayer("Player A", PlayerType.COMPUTER, new PaperStrategy());
 
-    RandomMoveStrategy randomMoveStrategy = new RandomMoveStrategy(new RandomMoveGenerator());
+    RandomMoveStrategy randomMoveStrategy = new RandomMoveStrategy(new RandomMoveGenerator(config));
     Player playerTwo =
         playerFactory.createPlayer("Player B", PlayerType.COMPUTER, randomMoveStrategy);
 
