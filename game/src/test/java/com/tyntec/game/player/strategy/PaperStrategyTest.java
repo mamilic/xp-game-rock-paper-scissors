@@ -18,8 +18,6 @@ class PaperStrategyTest {
 
   @Test
   void should_returnPaper_when_getMoveIsCalled() {
-    // Given
-
     // When
     Move move = paperStrategy.getMove();
 

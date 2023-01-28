@@ -19,8 +19,6 @@ class RandomMoveStrategyTest {
 
   @Test
   void should_returnRock_when_getMoveIsCalled() {
-    // Given
-
     // When
     Move move = randomMoveStrategy.getMove();
 
