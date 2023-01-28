@@ -6,7 +6,7 @@ import com.tyntec.move.Scissors;
 import com.tyntec.move.Move;
 import com.tyntec.result.Result;
 
-public class ScissorsPaperRule implements Rule {
+public class ScissorsBeatPaperRule implements Rule {
 
   @Override
   public Boolean canHandle(Move first, Move second) {

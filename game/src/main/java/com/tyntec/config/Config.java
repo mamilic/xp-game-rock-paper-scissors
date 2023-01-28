@@ -6,7 +6,7 @@ import com.tyntec.move.Rock;
 import com.tyntec.move.Scissors;
 import com.tyntec.rule.PaperBeatsRockRule;
 import com.tyntec.rule.RockBeatsScissorsRule;
-import com.tyntec.rule.ScissorsPaperRule;
+import com.tyntec.rule.ScissorsBeatPaperRule;
 import com.tyntec.rule.TieRule;
 import com.tyntec.rule.core.RuleChain;
 import lombok.Getter;
@@ -29,7 +29,7 @@ public class Config {
     ruleChain =
         new RuleChain()
             .addRule(new RockBeatsScissorsRule())
-            .addRule(new ScissorsPaperRule())
+            .addRule(new ScissorsBeatPaperRule())
             .addRule(new PaperBeatsRockRule())
             .addRule(new TieRule());
   }
