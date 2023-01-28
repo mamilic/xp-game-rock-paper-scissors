@@ -8,6 +8,7 @@ import com.tyntec.player.PlayerFactory;
 import com.tyntec.player.PlayerType;
 import com.tyntec.player.strategy.PaperStrategy;
 import com.tyntec.player.strategy.RandomMoveStrategy;
+import com.tyntec.player.utils.RandomMoveGenerator;
 import com.tyntec.result.PlayerMapper;
 import com.tyntec.result.RoundResult;
 import com.tyntec.statistics.GameStatistics;
@@ -28,8 +29,10 @@ public class Application {
 
     Player playerOne =
         playerFactory.createPlayer("Player A", PlayerType.COMPUTER, new PaperStrategy());
+
+    RandomMoveStrategy randomMoveStrategy = new RandomMoveStrategy(new RandomMoveGenerator());
     Player playerTwo =
-        playerFactory.createPlayer("Player B", PlayerType.COMPUTER, new RandomMoveStrategy());
+        playerFactory.createPlayer("Player B", PlayerType.COMPUTER, randomMoveStrategy);
 
     List<RoundResult> roundResults = gameEngine.playGame(playerOne, playerTwo);
 
