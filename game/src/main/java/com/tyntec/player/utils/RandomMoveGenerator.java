@@ -7,8 +7,8 @@ import java.security.SecureRandom;
 
 public class RandomMoveGenerator {
 
-  private final SecureRandom random;
   private final Config config;
+  private final SecureRandom random;
 
   public RandomMoveGenerator(Config config) {
     this.config = config;
@@ -16,8 +16,8 @@ public class RandomMoveGenerator {
   }
 
   public Move generate() {
-    int randomIndex = random.nextInt(Config.getInstance().getAllowedMoves().size());
+    int randomIndex = random.nextInt(config.getAllowedMoves().size());
 
-    return Config.getInstance().getAllowedMoves().get(randomIndex);
+    return config.getAllowedMoves().get(randomIndex);
   }
 }
