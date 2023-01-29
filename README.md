@@ -36,6 +36,10 @@ Player playerOne =
         playerFactory.createPlayer("Player A", 
                                     PlayerType.COMPUTER, 
                                     new PaperStrategy());
+Player playerTwo =
+        playerFactory.createPlayer("Player B", 
+                                    PlayerType.COMPUTER, 
+                                    new PaperStrategy());
 ```
 
 Then you can play the game by calling
