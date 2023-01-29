@@ -45,18 +45,18 @@ Player playerTwo =
 Then you can play the game by calling
 
 ```agsl
-   List<RoundResult> roundResults = gameEngine.playGame(playerOne, playerTwo);
+List<RoundResult> roundResults = gameEngine.playGame(playerOne, playerTwo);
 ```
 
 The RoundResults object contains round outcome, and can be used to get statistics 
 by passing it like 
 
 ```agsl
-    GameStatistics gameStatistics = new GameStatistics();
-    gameStatistics.calculate(roundResults);
+GameStatistics gameStatistics = new GameStatistics();
+gameStatistics.calculate(roundResults);
 
-    PlayerStatistics playerOneStatistics = gameStatistics.getPlayerOneStatistics();
-    PlayerStatistics playerTwoStatistics = gameStatistics.getPlayerTwoStatistics();
+PlayerStatistics playerOneStatistics = gameStatistics.getPlayerOneStatistics();
+PlayerStatistics playerTwoStatistics = gameStatistics.getPlayerTwoStatistics();
 
 ```
 
