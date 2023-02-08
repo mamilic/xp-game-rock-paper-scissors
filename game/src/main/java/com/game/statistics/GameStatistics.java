@@ -14,7 +14,7 @@ public class GameStatistics {
   public void calculate(List<RoundResult> roundResults) {
 
     playerOneStatistics = new PlayerStatistics(roundResults.get(0).getPlayerOne().getName());
-    playerTwoStatistics = new PlayerStatistics(roundResults.get(1).getPlayerOne().getName());
+    playerTwoStatistics = new PlayerStatistics(roundResults.get(0).getPlayerTwo().getName());
 
     roundResults.forEach(
         roundResult -> {
