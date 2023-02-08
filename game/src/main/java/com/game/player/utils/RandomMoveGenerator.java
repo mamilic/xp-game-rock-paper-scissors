@@ -1,6 +1,6 @@
 package com.game.player.utils;
 
-import com.game.config.Config;
+import com.game.engine.Config;
 import com.game.move.Move;
 
 import java.security.SecureRandom;

@@ -1,6 +1,5 @@
 package com.game.engine;
 
-import com.game.config.Config;
 import com.game.player.Player;
 import com.game.result.RoundResult;
 import lombok.Builder;
@@ -10,12 +9,12 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 @Builder
-public class GameEngine {
+public class GameRunner {
 
   private final Config config;
   private final RoundFactory roundFactory;
 
-  public GameEngine(Config config, RoundFactory roundFactory) {
+  public GameRunner(Config config, RoundFactory roundFactory) {
     this.config = config;
     this.roundFactory = roundFactory;
   }

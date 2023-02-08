@@ -1,6 +1,5 @@
 package com.game.engine;
 
-import com.game.config.Config;
 import com.game.player.Player;
 import com.game.player.PlayerType;
 import com.game.player.strategy.MoveStrategy;
@@ -18,17 +17,17 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-class GameEngineTest {
+class GameRunnerTest {
 
   @Mock private RoundFactory roundFactory;
   @Mock private Config config;
   @Mock private Round round;
 
-  private GameEngine gameEngine;
+  private GameRunner gameRunner;
 
   @BeforeEach
   void setup() {
-    gameEngine = new GameEngine(config, roundFactory);
+    gameRunner = new GameRunner(config, roundFactory);
   }
 
   @Test
@@ -42,7 +41,7 @@ class GameEngineTest {
     Player playerTwo = new MockPlayer(new PaperStrategy());
 
     // When
-    List<RoundResult> roundResults = gameEngine.playGame(playerOne, playerTwo);
+    List<RoundResult> roundResults = gameRunner.playGame(playerOne, playerTwo);
 
     // Then
     Assertions.assertEquals(numberOfRounds, roundResults.size());
@@ -59,7 +58,7 @@ class GameEngineTest {
     Player playerTwo = new MockPlayer(new PaperStrategy());
 
     // When
-    gameEngine.playGame(playerOne, playerTwo);
+    gameRunner.playGame(playerOne, playerTwo);
 
     // Then
     Mockito.verify(round, Mockito.times(numberOfRounds)).playRound();
