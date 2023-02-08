@@ -1,5 +1,6 @@
 package com.game.rule.core;
 
+import com.game.exception.GameConfigException;
 import com.game.move.Move;
 import com.game.result.Result;
 
@@ -25,8 +26,14 @@ public class RuleChain {
     Optional<Rule> optional =
         rules.stream().filter(rule -> rule.canHandle(first, second)).findFirst();
 
-    Rule rule = optional.get();
+    if (optional.isEmpty()) {
+      throw new GameConfigException("RuleChain can not be empty, please add rules to RuleChain");
+    }
 
+    return doHandle(first, second, optional.get());
+  }
+
+  private Result doHandle(Move first, Move second, Rule rule) {
     return rule.apply(first, second);
   }
 }
